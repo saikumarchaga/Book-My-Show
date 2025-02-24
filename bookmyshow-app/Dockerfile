@@ -8,10 +8,10 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # Force install a compatible PostCSS version to fix the issue
-RUN npm install postcss@8.4.21 postcss-safe-parser@6.0.0 --legacy-peer-deps
+RUN npm install postcss@8.4.21 postcss-safe-parser@6.0.0 --legacy-peer-deps --no-optional
 
 # Manually install missing dependencies
-RUN npm install chokidar@3 watchpack-chokidar2 --save
+#RUN npm install chokidar@3 watchpack-chokidar2 --save
 
 # Install dependencies
 RUN npm install
